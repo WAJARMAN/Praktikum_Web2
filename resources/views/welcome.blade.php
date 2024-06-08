@@ -1,33 +1,35 @@
 @extends('layouts.main')
 @section('content')
- <div class="container">
- <div class="row">
-    <div class="col-6 mx-auto">
-    <div class="card mt-4 mb-4">
-        <div class="card-header text-center">
-           Halaman Login
-        </div>
-        <div class="card-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <div>
+            </div>
+        <div class="card">
+            <div class="card-header text-center">
+                Halaman Login
+            </div>
+            <div class="card-body ">
                 <div class="text-center">
-                    <img src="{{asset('img/uniska.jpeg')}}" alt="" width="20%">
+                    <img src="{{asset('img/logo_uniska.png')}}" alt="" width="50%">
                 </div>
-            <form action="{{Route('login')}}" method="post">
-            @csrf
-
-            <div class="from-group mt-2">
+           
+                <form action="{{Route('login')}}" method="post">
+                @csrf
+           
+                <div class="form-group mt-2 ">
                 <label for="">Username</label>
-                <input type="text" class="form-control" placeholder="Enter Username" name="username" value="{{old('passowrd')}}">
+                <input type="text" class="form-control" placeholder="enter your username" name="username" value="{{old('password')}}">
             </div>
-
-            <div class="from-group mt-2">
+            <div class="form-group mt-2">
                 <label for="">Password</label>
-                <input type="password" class="form-control" placeholder="Enter Password" name="password" value="{{old('passowrd')}}">
+                <input type="password" class="form-control" placeholder="enter your password" name="password" value="{{old('password')}}">
             </div>
-
-            <div class="from-gruoup mt-2 text-center">
-                <button type="submit" class="btn btn-primary">Login</button>
+                <div class="my-2 text-center" >
+                    <button type="submit" class="btn btn-primary">Login User</button>
+                </div>
+            </form>
             </div>
-          </form>
         </div>
     </div>
 </div>

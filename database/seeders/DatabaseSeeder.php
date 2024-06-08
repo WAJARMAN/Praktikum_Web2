@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Http\Request\MahasiswaRequest;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,13 +15,13 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run(): void
+    public function run():void
     {
         User::create([
-            'nama' => 'Admin1',
-            'username' => 'adminNama',
-            'password' => Hash::make('12345678'),
-            'role' => 'admin',
+            'name'      => 'Admin1',
+            'username'  => 'adminNama',
+            'password'  => Hash::make('12345678'),
+            'role'      => 'admin',
         ]);
     }
 }

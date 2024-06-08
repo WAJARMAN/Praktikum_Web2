@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-
 use Illuminate\Foundation\Http\FormRequest;
 
 class MahasiswaRequest extends FormRequest
@@ -20,16 +19,16 @@ class MahasiswaRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, mixed>
+     * @return array
      */
     public function rules(): array
     {
         return [
-            'jurusan' => 'required',
-            'npm' => ['required', 'max:11'],
-            'nama' => 'required',
+            'jurusan'       => 'required',
+            'npm'           => ['required','max:8'],
+            'nama'          => 'required',
             'tanggal_lahir' => 'required',
-            'foto' => ['nullable','mimes:png,jpg','max:10000'],
+            'foto'          => ['nullable','mimes:png,jpg','max:10000'],
         ];
     }
 }

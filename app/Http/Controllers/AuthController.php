@@ -7,20 +7,20 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    // Fungsi Login
+    //fungsi login
     public function login(Request $request)
     {
-    $credentials = $request->only('username', 'password');
-    if(Auth::attempt($credentials))
-    {
-        $request->session()->regenerate();
-        return redirect()->route('home');
-    }else{
-        dd('user tidak ditemukan');
-    }
+        $credentials = $request->only('username','password');
+        if(Auth::attempt($credentials))
+        {
+            $request->session()->regenerate();
+            return redirect()->route('home');
+        } else {
+            dd('user tidak ditemukan');
+        }
     }
 
-    // Fungsi Logout
+    //fungsi logout
     public function logout(Request $request)
     {
         Auth::logout();
@@ -29,4 +29,5 @@ class AuthController extends Controller
 
         return redirect()->route('loginView');
     }
+
 }
